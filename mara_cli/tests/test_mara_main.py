@@ -1,5 +1,9 @@
 from mara_cli.cli import cli
 import re
+import os
+
+# needed workaorund because mara expects a MARA_APP be importable
+os.environ['MARA_APP'] = 'mara_cli'
 
 def test_without_argument(cli_runner):
 

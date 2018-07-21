@@ -1,7 +1,11 @@
 from mara_cli.cli import cli, setup_commandline_commands
 import re
+import os
 
 import mara_config
+
+# needed workaorund because mara expects a MARA_APP be importable
+os.environ['MARA_APP'] = 'mara_cli'
 
 
 def test_print_config(cli_runner):
